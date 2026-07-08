@@ -1,177 +1,72 @@
-# Auto Hero Google Ads — Session Recap 08/07/2026
+# Auto Hero Google Ads — Change Log
 
-A plain-English recap of every setting changed in the Google Ads account on 08/07/2026 (Sydney), in the order it happened.
+Session recaps for the Auto Hero Google Ads account (947-503-9797), Sydney roadside battery + jumpstart service.
 
-**Account:** Auto Hero — 947-503-9797
-**Campaign in focus:** Jumpstart 14/04/2026 (23745071702)
-
----
-
-## Table of Contents
-
-1. [What changed today](#1-what-changed-today)
-2. [Reading the Google Ads UI after the changes](#2-reading-the-google-ads-ui-after-the-changes)
-3. [TL;DR](#3-tldr)
+Each session's changes are written in plain English, in the order they happened, so anyone with account access can follow what changed and why.
 
 ---
 
-## 1. What changed today
+## Sessions
 
-### 1.1 New ad group launched
-
-**Where:** Campaign "Jumpstart 14/04/2026"
-
-**What:** Created a new ad group called **"20KAG - Jumpstart"**.
-
-**Why:** Consolidate the jumpstart activity into a single fresh ad group with a tighter keyword set, rather than continuing on the older "Car Jump Starts" group.
-
-**Details:**
-- Status: Enabled
-- Bid: $5.00 CPC (matched what the old ad group was using)
-
----
-
-### 1.2 Old ad group paused
-
-**What:** Paused the previous **"Car Jump Starts"** ad group.
-
-**Why:** So the new ad group replaces it cleanly. Only one live ad group at a time, per our current focus rule.
-
----
-
-### 1.3 Keywords added
-
-**What:** Added **17 keywords**, each in two match types (Phrase + Exact), to the new ad group. That's **34 total keyword entries**.
-
-**The 17 terms:**
-
-jump start · jumpstart service · car jump start · flat battery jump start · battery jump start service · mobile jump start · car won't start · jump start near me · mobile battery service · emergency jump start · 24 hour jump start · come to me jump start · flat battery help · car battery dead · battery won't start car · jump start Sydney · mobile mechanic flat battery Sydney
-
-**Note on the name:** The ad group is called "20KAG" but has 34 keywords — the name is a label, not a literal count.
-
----
-
-### 1.4 Ads cloned across
-
-**What:** Copied the 3 currently-live Responsive Search Ads from the old ad group into the new one.
-
-**The three ad angles:**
-
-1. **Urgency** — "Call Now" pinned, "Vehicle Technicians Sydney"
-2. **No-membership** — "Pay Per Job", "No Joining Fee"
-3. **Mobile / come-to-you** — "24/7 Sydney Metro", "We Come To You"
-
-All three set to Enabled.
-
----
-
-### 1.5 CallRail conversion action fixed
-
-There were two issues with how CallRail conversions were being recorded in Google Ads:
-
-**Issue A — Wrong category:** The "Call Rail" conversion action was miscategorised as "Default" instead of "Phone call lead".
-
-- **Fix:** Changed category from Default → **Phone call lead**.
-
-**Issue B — Hard to identify:** Multiple actions in the account had "CallRail" in the name but only one was the real one.
-
-- **Fix:** Renamed it to **"Call Rail 8/7/26"** so the latest-touched version is easy to spot.
-
-**Effect:** The action now shows up correctly in the "Phone call lead" goal group in the Google Ads UI, and becomes eligible for Enhanced Conversions for Leads in future.
-
----
-
-### 1.6 Bidding goals cleaned up (both campaign and account level)
-
-Google Ads was optimising toward multiple conversion goals (form leads, YouTube views, "clicks to call", etc.) — most of which aren't relevant to Auto Hero. This meant the bidder was chasing signal that didn't match real business outcomes, and also risked double-counting real calls.
-
-**What we did:** Made **CallRail phone calls the ONLY goal** Google Ads optimises for.
-
-**At the campaign level (Jumpstart 14/04/2026):**
-
-| Goal | Change |
+| Date | Summary |
 |---|---|
-| Phone call lead (Website) — where CallRail lives | ✅ **ON** |
-| Default (Website) | ❌ OFF |
-| Contact (Call from ads) | ❌ OFF |
+| [09/07/2026](reports/2026-07-09.md) | Campaign re-enabled + bid strategy and budget verified against API (records updated) |
+| [08/07/2026](reports/2026-07-08.md) | New 20KAG ad group + keywords + RSAs, CallRail conversion action fix, CallRail-only bidding goals |
 
-**At the account level (defaults for any new campaign):**
-
-| Goal | Change |
-|---|---|
-| Phone call lead (Website) — where CallRail lives | ✅ **ON** |
-| Default (Website) | ❌ OFF |
-| Submit lead form (Website) | ❌ OFF |
-| Phone call lead (Call from ads) | ❌ OFF |
-| Contact (Call from ads) | ❌ OFF |
-| Engagement (YouTube) | ❌ OFF |
-| YouTube follow-on views | ❌ OFF |
-
-**Result:** Now there is exactly **one biddable goal** at both layers — CallRail phone calls. Any new campaign will inherit this correctly by default.
+Latest session is always at the top.
 
 ---
 
-### 1.7 What we did NOT change
+## Latest session — 09/07/2026
 
-- Bid strategy (kept as-is — currently shows Maximize Conversions in the API but that's disputed vs. Manual CPC; left for another session)
-- Budget
-- Ad schedule (still 17:00–22:00 Sydney)
-- Location targeting
-- Negative keyword lists (auto-inherited by new ad group from campaign-level shared lists)
-- Any of the 14 brand ad groups (Toyota, Ford, BMW, etc.) — still paused as before
+Short session — getting the campaign back to serving after yesterday's build, and correcting two facts in our records that turned out to be wrong.
 
----
+### Key changes
 
-### 1.8 Important watch-out (found in end-of-session health check)
+- **Campaign enabled.** `Jumpstart 14/04/2026` flipped from PAUSED to ENABLED. Status verified: SERVING + ELIGIBLE.
+- **Bid strategy verified.** The API shows the campaign is on **Maximize Conversions** (smart bidding, no target CPA). Prior records said Manual CPC — that was outdated. No change to strategy made this session.
+- **Budget verified.** The API shows **$100/day**, not $50/day as prior records indicated. Someone raised the budget at some point without it being logged. Left at $100/day.
+- **No target CPA added.** Given only 7 conversions in the last 30 days (below the ~30 conv/30d floor smart bidding needs to hit a target reliably), adding a $40 tCPA now could throttle serving. Deferred until conversion volume is higher.
 
-The campaign **Jumpstart 14/04/2026** appears to be currently **PAUSED** at the master switch level (though it was Enabled when we started the session). All the improvements above are correctly configured but won't actually run until the campaign itself is re-enabled. Someone with account access needs to flip it back on when ready to serve.
+### Serving expectations
 
----
+Campaign is ENABLED but the ad schedule is **17:00–22:00 Sydney**, so first impressions will land at 17:00 today.
 
-## 2. Reading the Google Ads UI after the changes
+### Watch-outs
 
-When you open **Goals > Summary** you'll see multiple goal cards still labelled "Active". **That's expected** — it doesn't mean the bidder is using them.
+- Soft `HAS_ADS_LIMITED_BY_POLICY` warning still on the campaign — legacy flag from paused ads elsewhere in the campaign. All live ads are APPROVED.
+- Call-asset render rate was 15.5% in the 7d pre-pause — worth checking Friday.
+- Top-of-page impression share on mobile 25.6%, rank-lost impression share 54.5% — Ad Rank / Quality Score is the ceiling, not budget.
 
-### The word "Active" in this UI is misleading
-
-- **"Active"** = the goal card is properly configured (has at least one enabled primary conversion action inside).
-- It does NOT mean "the bidder is optimising toward this."
-
-### The "Campaigns" column is the real signal
-
-| Goal | Campaigns | What it means |
-|---|---|---|
-| **Phone call lead** | **3 of 3** ✅ | On every campaign (this is CallRail — exactly right) |
-| Contact | 0 of 3 | Not applied to any campaign anymore ✅ |
-| Get directions | 0 of 3 | Not applied to any campaign ✅ |
-| Engagement | 0 of 3 | Not applied to any campaign ✅ |
-| Page view | 0 of 3 | Not applied to any campaign ✅ |
-| YouTube follow-on views | 0 of 3 | Not applied to any campaign ✅ |
-| Submit lead form | 0 of 3 | Not applied to any campaign ✅ |
-
-**Only Phone call lead is being used by any campaign.** The other six goal cards can sit there as "Active" all they like — they're not driving anything because no campaign is subscribed to them. This is the CallRail-only setup working correctly.
-
-### Note on "Misconfigured" — pre-existing
-
-The **Submit lead form** goal card shows "Misconfigured". This is a pre-existing setup issue with the "Website lead" conversion action (probably a missing tag on the site). It was not caused by today's changes, and it's safe to ignore because Auto Hero doesn't track form conversions.
-
-### What you'd see if we hadn't done today's changes
-
-Every one of those cards would say `3 of 3` in the Campaigns column instead of `0 of 3`. That was the "leaky defaults" problem — every campaign inheriting a goal set that included YouTube, forms, engagement etc. Now the leak is closed.
+Full detail: [reports/2026-07-09.md](reports/2026-07-09.md).
 
 ---
 
-## 3. TL;DR
+## Previous sessions
 
-- Rebuilt the jumpstart ad group with cleaner keywords + copied over the working ads
-- Fixed how CallRail conversion data is categorised in Google Ads (Default → Phone call lead)
-- Locked down Google Ads to optimise for **only** CallRail phone calls — no more distraction from YouTube goals, form goals, or Google's native call tracking
-- **Campaign is currently paused** — needs to be re-enabled before any of this serves
+### 08/07/2026 — Ad group rebuild + CallRail-only conversion setup
 
-**One-line for someone skimming:**
+The big structural session. Highlights:
 
-> The other goals showing "Active" is normal — that just means the cards are set up correctly. The important thing is the "Campaigns" number: Phone call lead is on 3 of 3 campaigns, everything else is on 0 of 3. So the bidder is only chasing CallRail phone calls — everything else is dormant.
+- Built new ad group **"20KAG - Jumpstart"** inside the Jumpstart campaign, with 17 keywords (Phrase + Exact = 34 entries) and the 3 top-performing RSAs cloned from the old ad group.
+- Paused the older "Car Jump Starts" ad group.
+- Fixed the CallRail conversion action — corrected category from Default → Phone call lead, renamed to `Call Rail 8/7/26` for easy identification.
+- Locked down bidding goals at both campaign and account level so Google Ads optimises only for CallRail phone calls — no more distraction from YouTube, form leads, or Google's native call tracking.
+- Reconciled CallRail export vs Google Ads: 35 of 38 qualifying calls captured (92%) — the missing 3 all lacked a `gclid` (iOS-only `gbraid` or direct-dial ad-extension), which is a known Google/CallRail attribution limit.
+
+Full detail: [reports/2026-07-08.md](reports/2026-07-08.md).
 
 ---
 
-*Prepared for Matt Banks, Auto Hero (Sydney) — 08/07/2026 by Claude Code.*
+## Account context
+
+- **Business:** Auto Hero — mobile onsite battery replacement + emergency jumpstarts across Sydney metro (25km radius from Wentworth Point 2127).
+- **Google Ads ID:** 947-503-9797
+- **Live campaign:** `Jumpstart 14/04/2026` (`23745071702`)
+- **Ad schedule:** 17:00–22:00 Sydney
+- **Bidding:** Maximize Conversions (no target CPA), $100/day
+- **Conversion source of truth:** CallRail webhook upload → conversion action `Call Rail 8/7/26` (ID 7587485451)
+
+---
+
+*Maintained by Matt Banks + Claude Code. Sessions logged as they happen.*
